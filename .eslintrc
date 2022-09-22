@@ -1,0 +1,99 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "react-app",
+        "react-app/jest",
+        "airbnb",
+        "airbnb/hooks",
+        "airbnb-typescript",
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "rules": {
+        // turn on errors for missing imports
+        "import/no-unresolved": "error",
+        "object-curly-spacing": ["warn", "always"],
+        "no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "args": "none"
+            }
+        ],
+        "@typescript-eslint/semi": ["off"],
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "args": "none"
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": [
+            "off",
+            {
+                "ignoreRestArgs": true
+            }
+        ],
+
+        "@typescript-eslint/no-shadow": "off",
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "react/jsx-key": "error",
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    "**/*.test.js",
+                    "**/*.test.jsx",
+                    "**/*.test.ts",
+                    "**/*.test.tsx",
+                    "src/tests/**/*"
+                ]
+            }
+        ],
+        "react/jsx-props-no-spreading": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-boolean-value": "off",
+        "react/prop-types": "off",
+        "react/no-unescaped-entities": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-wrap-multilines": "off",
+        "react/destructuring-assignment": "off",
+        "eslint-disable no-shadow": 0,
+        "react/require-default-props": 0,
+        "eslint-disable consistent-return": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function",
+                "unnamedComponents": "arrow-function"
+            }
+        ]
+    },
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx", ".js", ".jsx"]
+        }
+    }
+}
